@@ -17,7 +17,9 @@ import ipproxypool.Myexception.checkStringNull;
 import ipproxypool.Myexception.responseException;
 import ipproxypool.bean.ipProxyPoolBean;
 import ipproxypool.util.conversionUtil;
-
+/*
+ * 第一次获取页面代理ip
+ */
 public class MyHttpResponse {
 	public static String getHttpText(String url) {
 		//Queue<ipProxyPoolBean> ipProxyPoolList = new LinkedList<ipProxyPoolBean>();
