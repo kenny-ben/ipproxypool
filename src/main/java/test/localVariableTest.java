@@ -12,10 +12,14 @@ public class localVariableTest {
 		/*
 		 * String s = "1"; showStr(s); System.out.println(s);
 		 */
-		for(int i =0;i<4;i++) {
+		/*for(int i =0;i<4;i++) {
 			System.out.println(localVariableTest.showStr(i));
+		}*/
+		List<String> list = new ArrayList<String>();
+		localVariableTest.testlist(list);
+		for(String s:list) {
+			System.out.println(s);
 		}
-		
 	}
 	public static String showStr(int s) {
 		/* s = s+"1"; */
@@ -34,4 +38,9 @@ public class localVariableTest {
 		//System.out.println(k++);
 		return st[s];
 		}
+
+	public static void testlist(List<String> list) {
+		list.add("234");
+	}
 }
+ 

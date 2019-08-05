@@ -81,9 +81,10 @@ public class MyHttpResponse {
 		String resource = null;
 		int staff;
 		//设置代理访问及超时时限
-		HttpHost httpHost = new HttpHost(ip,Integer.getInteger(port));
+		//System.out.println(ip+Integer.getInteger(port));
+		HttpHost httpHost = new HttpHost(ip,Integer.parseInt(port));
 		RequestConfig config = RequestConfig.custom().setProxy(httpHost).setConnectTimeout(2000).setSocketTimeout(1000).build();
-		HttpGet httpGet = new HttpGet();
+		HttpGet httpGet = new HttpGet(url);
 		httpGet.setConfig(config);
 		httpGet.setHeader("Accept", "text/html,application/xhtml+xml,application/xml;" +
                 "q=0.9,image/webp,*/*;q=0.8");
@@ -98,6 +99,7 @@ public class MyHttpResponse {
                 "(KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
         try {
         	//获得http请求的html
+        	System.out.println(httpGet.getAllHeaders());
 			response = httpClient.execute(httpGet);
 			//得到服务器的响应码
 			staff = response.getStatusLine().getStatusCode();
